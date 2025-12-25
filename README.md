@@ -1,4 +1,8 @@
+
 # React + Vite
+Introduction 
+We use to walk several miles to homes of friends to study and collaborate on projects. The rise of tech has come to eradicate this problem. StudyHub provides the platform to resolve this issue digitally. 
+The Frontend StudyHub is the user interface of the StudyHub platform where students, teachers, and admins can interact with the system. It is a responsive, user-friendly web application.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
