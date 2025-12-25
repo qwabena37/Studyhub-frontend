@@ -6,12 +6,12 @@ const Landing = () => {
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
-          Learn. Build. Collaborate.
+          Learn . Grow . Collaborate . Build
         </h1>
 
         <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-8">
           StudyHub helps students and developers manage projects, collaborate
-          with peers, and grow together.
+          with peers and grow together.
         </p>
 
         <div className="flex justify-center gap-4">
@@ -36,7 +36,7 @@ const Landing = () => {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
           <Feature
             title="Project Management"
-            text="Create, organize, and track your study or development projects."
+            text="Create, organize and track your study or development projects."
           />
           <Feature
             title="Secure Authentication"
@@ -52,6 +52,7 @@ const Landing = () => {
       {/* Footer */}
       <footer className="py-6 text-center text-gray-200">
         © {new Date().getFullYear()} StudyHub. All rights reserved.
+        <p>Designed by: James</p>
       </footer>
     </div>
   );

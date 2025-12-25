@@ -5,8 +5,8 @@ const Navbar = () => {
   const { isAuthenticated, logout } = authStore();
 
   return (
-    <nav className="p-4 bg-gray-900 text-white flex justify-between">
-      <Link to="/" className="font-bold">StudyHub</Link>
+    <nav className="p-4 bg-white-900 text-purple flex justify-between">
+      <Link to="/" className="font-bold text-4xl">StudyHub</Link>
 
       <div className="space-x-4">
         {isAuthenticated ? (
