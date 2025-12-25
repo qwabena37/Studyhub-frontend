@@ -8,6 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import Projects from "./pages/Projects";
 import SingleProject from "./pages/SingleProject";
 import CreateProject from "./pages/CreateProject";
+import Landing from "./pages/Landing";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Landing />} />
 
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
