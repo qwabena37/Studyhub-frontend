@@ -1,25 +1,31 @@
-import { useState } from 'react'
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import PrivateRoute from "./components/PrivateRoute";
+
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import Projects from "./pages/Projects";
+import SingleProject from "./pages/SingleProject";
+import CreateProject from "./pages/CreateProject";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-      <h1>StudyHub Platform Under Construction</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Count Down Starts {count}
-        </button>
-        <p>
-         Wait Patiently For Something Amazing
-        </p>
-      </div>
-
-    </>
-  )
+        <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<SingleProject />} />
+          <Route path="/projects/create" element={<CreateProject />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
