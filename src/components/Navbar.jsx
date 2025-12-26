@@ -5,7 +5,7 @@ const Navbar = () => {
   const { isAuthenticated, logout } = authStore();
 
   return (
-    <nav className="p-4 bg-white-900 text-purple-800 ml-5 mr-10 flex justify-between">
+    <nav className="p-4 bg-white-900 text-center text-purple-800 ml-5 mr-10 flex justify-between">
       <Link to="/" className="font-bold text-3xl">StudyHub</Link>
 
       <div className="space-x-4">
