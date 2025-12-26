@@ -1,25 +1,29 @@
 import { Link } from "react-router-dom";
-import authStore from "../store/authStore";
 
 const Navbar = () => {
-  const { isAuthenticated, logout } = authStore();
-
   return (
-    <nav className="p-4 bg-white-900 text-center text-purple-800 ml-5 mr-10 flex justify-between">
-      <Link to="/" className="font-bold text-3xl">StudyHub</Link>
+    <nav className="bg-white dark:bg-gray-800 shadow px-6 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Left side: Logo or title */}
+        <div className="text-2xl font-bold text-purple-700 dark:text-purple-400">
+          <Link to="/">StudyHub</Link>
+        </div>
 
-      <div className="space-x-4">
-        {isAuthenticated ? (
-          <>
-            <Link to="/dashboard">Dashboard</Link>
-            <button onClick={logout}>Logout</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
+        {/* Right side: Links */}
+        <div className="flex space-x-6">
+          <Link
+            to="/login"
+            className="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition"
+          >
+            Login
+          </Link>
+          <Link
+            to="/register"
+            className="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition"
+          >
+            Register
+          </Link>
+        </div>
       </div>
     </nav>
   );
