@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import authStore from "../store/authStore";
 
 const Login = () => {
@@ -6,6 +6,19 @@ const Login = () => {
 
   const [fullName, setFullName] = useState("");
   const [password, setPassword] = useState("");
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -13,20 +26,30 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <div className="bg-white rounded-xl shadow-lg w-full max-w-5xl grid md:grid-cols-2 overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 px-4 transition-colors">
+
+      {/* Dark mode toggle */}
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="absolute top-6 right-6 px-3 py-1 rounded text-sm
+                   bg-gray-200 dark:bg-gray-700
+                   text-gray-800 dark:text-gray-200"
+      >
+        {darkMode ? "☀ Light" : "🌙 Dark"}
+      </button>
+
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg w-full max-w-5xl grid md:grid-cols-2 overflow-hidden">
 
         {/* LEFT PANEL */}
-        <div className="hidden md:flex flex-col justify-center p-10 bg-gray-50">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+        <div className="hidden md:flex flex-col justify-center p-10 bg-gray-50 dark:bg-gray-700">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             Welcome back
           </h2>
 
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
             Learn, Grow, Collaborate and Build with Colleagues.
           </p>
 
-          {/* Greyed-out illustrations */}
           <div className="grid grid-cols-3 gap-6 opacity-60">
             <NotebookIcon />
             <PenIcon />
@@ -38,7 +61,7 @@ const Login = () => {
 
         {/* RIGHT PANEL */}
         <div className="p-8 md:p-10">
-          <h1 className="text-2xl font-bold text-gray-800 mb-6">
+          <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
             Login to StudyHub
           </h1>
 
@@ -48,7 +71,10 @@ const Login = () => {
               placeholder="Full Name"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
-              className="w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300 dark:border-gray-600
+                         bg-white dark:bg-gray-700
+                         text-gray-800 dark:text-gray-100
+                         px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
 
@@ -57,7 +83,10 @@ const Login = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full border border-gray-300 dark:border-gray-600
+                         bg-white dark:bg-gray-700
+                         text-gray-800 dark:text-gray-100
+                         px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-500"
               required
             />
 
@@ -69,7 +98,7 @@ const Login = () => {
             </button>
           </form>
 
-          <p className="mt-4 text-xs text-gray-500">
+          <p className="mt-4 text-xs text-gray-500 dark:text-gray-400">
             Enjoy a productive time here.
           </p>
         </div>
@@ -78,10 +107,11 @@ const Login = () => {
   );
 };
 
-/* ---------------- ICONS (SVGs) ---------------- */
+/* ---------------- ICONS ---------------- */
 
 const IconWrapper = ({ children }) => (
-  <div className="flex items-center justify-center w-20 h-20 bg-gray-100 rounded-xl">
+  <div className="flex items-center justify-center w-20 h-20
+                  bg-gray-100 dark:bg-gray-600 rounded-xl">
     {children}
   </div>
 );
