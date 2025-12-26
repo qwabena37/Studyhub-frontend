@@ -30,13 +30,17 @@ const Login = () => {
 
       {/* Dark mode toggle */}
       <button
-        onClick={() => setDarkMode(!darkMode)}
-        className="absolute top-6 right-6 px-3 py-1 rounded text-sm
-                   bg-gray-200 dark:bg-gray-700
-                   text-gray-800 dark:text-gray-200"
-      >
-        {darkMode ? "☀ Light" : "🌙 Dark"}
-      </button>
+  onClick={() => setDarkMode(!darkMode)}
+  className="fixed bottom-6 right-6 z-50
+             w-12 h-12 rounded-full
+             flex items-center justify-center
+             bg-gray-200 dark:bg-gray-700
+             text-gray-800 dark:text-gray-200
+             shadow-lg hover:scale-105 transition"
+  aria-label="Toggle dark mode"
+>
+  {darkMode ? "☀" : "🌙"}
+</button>
 
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg w-full max-w-5xl grid md:grid-cols-2 overflow-hidden">
 
