@@ -13,13 +13,13 @@ const Navbar = () => {
         <div className="flex space-x-6">
           <Link
             to="/login"
-            className="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition"
+            className="text-blue-900 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition"
           >
             Login
           </Link>
           <Link
             to="/register"
-            className="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition"
+            className="text-blue-900 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition"
           >
             Register
           </Link>
