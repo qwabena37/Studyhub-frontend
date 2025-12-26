@@ -42,28 +42,26 @@ const Login = () => {
   {darkMode ? "☀" : "🌙"}
 </button>
 
-     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg w-full max-w-5xl
-                grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-  
-  {/* WELCOME PANEL: visible and stacked on mobile */}
-  <div className="flex flex-col justify-center p-6 md:p-10 bg-gray-50 dark:bg-gray-700">
-    <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-      Welcome back
-    </h2>
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg w-full max-w-5xl grid md:grid-cols-2 overflow-hidden">
 
-    <p className="text-gray-600 dark:text-gray-300 mb-8">
-      Learn, Grow, Collaborate and Build with Colleagues.
-    </p>
+        {/* LEFT PANEL */}
+        <div className="hidden md:flex flex-col justify-center p-10 bg-gray-50 dark:bg-gray-700">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+            Welcome back
+          </h2>
 
-    <div className="grid grid-cols-3 gap-6 opacity-60">
-      <NotebookIcon />
-      <PenIcon />
-      <LaptopIcon />
-      <CoffeeIcon />
-      <GrowthIcon />
-      <BookIcon />
-    </div>
-  </div>
+          <p className="text-gray-600 dark:text-gray-300 mb-8">
+            Learn, Grow, Collaborate and Build with Colleagues.
+          </p>
+
+          <div className="grid grid-cols-3 gap-6 opacity-60">
+            <NotebookIcon />
+            <PenIcon />
+            <LaptopIcon />
+            <CoffeeIcon />
+            <GrowthIcon />
+          </div>
+        </div>
 
         {/* RIGHT PANEL */}
         <div className="p-8 md:p-10">
