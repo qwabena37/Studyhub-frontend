@@ -1,20 +1,82 @@
 
-# React + Vite
+# StudyHub
 Introduction 
 We use to walk several miles to homes of friends to study and collaborate on projects. The rise of tech has come to eradicate this problem. StudyHub provides the platform to resolve this issue digitally. 
-The Frontend StudyHub is the user interface of the StudyHub platform where students, teachers, and admins can interact with the system. It is a responsive, user-friendly web application.
+The Frontend StudyHub is the user interface of the StudyHub platform where students, teachers and admins can learn, grow, collaborate and build together. It is a responsive, user-friendly web application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# StudyHub Frontend
+StudyHub is a modern, responsive frontend application built with **React**, **Vite**, and **Tailwind CSS**.  
+It provides a collaborative learning environment where users can log in, manage projects, and work together efficiently.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- ⚡ Fast development with **Vite**
+- 🎨 Clean, responsive UI with **Tailwind CSS**
+- 🌙 Light & Dark mode (persistent)
+- 🔐 Authentication state management (Zustand)
+- 🧭 Protected routes for authenticated users
+- 📦 Scalable project structure
+- ☁️ Ready for **Vercel deployment**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🗂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+studyhub-frontend/
+│── package.json
+│── tailwind.config.js
+│── postcss.config.js
+│── vite.config.js
+│── index.html
+│
+└── src/
+├── main.jsx
+├── App.jsx
+│
+├── store/
+│ └── authStore.js
+│
+├── api/
+│ └── apiClient.js
+│
+├── components/
+│ ├── Navbar.jsx
+│ └── PrivateRoute.jsx
+│
+├── pages/
+│ ├── Login.jsx
+│ ├── Register.jsx
+│ ├── Dashboard.jsx
+│ ├── Projects.jsx
+│ ├── SingleProject.jsx
+│ └── CreateProject.jsx
+│
+└── styles/
+└── global.css
+---
+
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – UI library
+- **Vite** – Fast build tool
+- **Tailwind CSS** – Utility-first styling
+- **Zustand** – State management
+- **Axios** – API communication
+- **Vercel** – Deployment
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/qwabena37/studyhub-frontend.git
+cd studyhub-frontend
+
+
+
