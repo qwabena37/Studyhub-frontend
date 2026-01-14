@@ -65,3 +65,29 @@ studyhub-frontend/
 └── styles/
 └── global.css
 
+
+---
+
+## 🛠 Tech Stack
+
+- **React** – Component-based UI library
+- **Vite** – Lightning-fast build and development tool
+- **Tailwind CSS** – Utility-first CSS framework
+- **Zustand** – Lightweight state management
+- **Axios** – API communication
+- **Vercel** – Cloud deployment platform
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/qwabena37/studyhub-frontend.git
+cd studyhub-frontend
+
+👨‍💻 Author
+
+James Appiah
+Software Engineer | Frontend | Backend | DevOps
+GitHub: https://github.com/qwabena37
